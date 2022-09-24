@@ -1,6 +1,10 @@
 {% extends './base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Inicio{% endblock %}
+
+{% block customcss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.v5.0.2.css') }}">
+{% endblock %}
 
 
  {% block body %}
@@ -10,3 +14,8 @@
 <a class="btn btn-secondary" href="{{ url_for('logout') }}">Salir</a>
 
  {% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.v5.0.2.js') }}"></script>
+{% endblock %}
+

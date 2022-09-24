@@ -24,6 +24,7 @@ login_manager_app=LoginManager(app)
 def load_user(id):
     return ModelUser.get_by_id(db, id)
 
+
 # Ruta Raiz que nos redirige al login
 @app.route('/')
 def index():
@@ -57,8 +58,14 @@ def logout():
     return redirect(url_for('login'))
     
 @app.route('/home')
+@login_required
 def home():
     return render_template('home.html')
+
+@app.route('/tabla')
+@login_required
+def tabla():
+    return render_template('tabla.html')
 
 @app.route('/protected')
 @login_required
